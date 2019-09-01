@@ -1,13 +1,17 @@
 import Sequelize from 'sequelize';
 
-const sequelize = new Sequelize(
+/* const sequelize = new Sequelize(
     process.env.DATABASE,
     process.env.DATABASE_USER,
     process.env.DATABASE_PASSWORD,
     {
         dialect: 'postgres',
     },
-);
+); */
+
+const sequelize = new Sequelize("postgres://postgres:postgres@localhost/apollo_exercise",{
+    dialect: 'postgres'
+})
 
 const models = {
     User: sequelize.import('./user'),
@@ -28,7 +32,7 @@ export default models;
 
 
 
-let users = {
+/* let users = {
     1: {
         id: '1',
         username: 'Jeremy Adams',
@@ -57,4 +61,4 @@ let messages = {
 export default {
     users,
     messages,
-};
+}; */
