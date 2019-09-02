@@ -13,6 +13,15 @@ const sequelize = new Sequelize("postgres://postgres:postgres@localhost/apollo_e
     dialect: 'postgres'
 })
 
+/* const sequelize = new Sequelize({
+    database: 'apollo_exercise',
+    username: 'Steve',
+    password: 'Captain',
+    host: 'localhost',
+    port: 5432,
+    dialect: 'postgres'
+}); */
+
 const models = {
     User: sequelize.import('./user'),
     Message: sequelize.import('./message'),
